@@ -23,14 +23,14 @@ path() :-
     path(route, view, kwargs=None, name=None) - It returns an element for inclusion in urlpattems.
 
     Where,
-    1) The route argumcnt should be a string or gettext lazy() that contains a URL pattern.
+    1) The route argument should be a string or gettext lazy() that contains a URL pattern.
     The string may contain angle brackets e.g. <username> to capture part of the URL and send it as a keyword argument to the view. The angle brackets may include a converter specification like the int part of <int:id> which limits the characters matched and may also change the type of the variable passed to the view. For example, <int:id>
     matches a string of decimal digits and converts the value to an int.
 
     2)The view argument is a view function or the result of as_view() for class-based views.
     It can also be an django.urls.include().
 
-    3)The kwargs argument allows you to pass additional arguments to the view fuction or method.
+    3)The kwargs argument allows you to pass additional arguments to the view function or method.
     It should be a dictionary.
 
     4)name is used to perform URL reversing.
@@ -45,3 +45,55 @@ path() :-
             urlpatterns=[
                 path('learndj/', views.learn_Django, {'check': 'OK'}, name='learn_django'),
             ]
+
+
+URL PATTERN INSIDE PROJECT :-
+
+    urls.py file is used to deline url pattern attached with application or view of application or view function of application.
+
+    urls.py file is located inside inner project folder not inside application folder which means we define url at project level for applications. 
+    
+    Defined url name will be used by application user to get response from the application or view function of application.
+
+    STEPS:- 
+        Open urls.py
+        Import Module (Python file) of the application
+        Write URL Name and Map it with function
+
+        from course import views
+        urlpatterns =[
+            path('learndj/', views.learn django),
+        ]
+        learndj is mapped with learn_django function which is inside views.py file
+
+    
+    We can define multiple url for one view function. Which means we can access same view function with multiple urls.
+
+    example:- 
+        urls.py 
+            urlpatterns = [
+                path('admin/', admin.site.urls),
+                path('course/', views.course),
+                path('lecture/', views.course),
+                path('learnCourse/', views.course),
+            ]
+
+
+SINGLE APPLICATION WITH MULTIPLE FUNCTIONS:- 
+
+    views.py
+    from django.http import HttpResponse
+
+    def learn_django(request):
+        return HttpResponse('Hello Django')
+
+    def learn_python(request):
+        return HttpResponse('<h1>Hello Python</h1>')
+
+    urls.py
+    from course import Views
+
+    urlpatterns =[
+        path('learndi/', views.learn_django).
+        path('learnpy/', views.learn_python),
+    ]
