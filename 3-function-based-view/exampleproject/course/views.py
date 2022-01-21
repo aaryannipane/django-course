@@ -8,7 +8,7 @@ def learn_django(request):
     return HttpResponse('Hello World')
 
 def show_html(request):
-    return HttpResponse('<h1 style="background: lightblue; text-align:center;">Hello Puthon</h1>')
+    return HttpResponse('<h1 style="background: lightblue; text-align:center;">Hello Python</h1>')
 
 # for home page
 def index(req):
