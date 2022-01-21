@@ -1,0 +1,85 @@
+How to START / Create  Application in Django
+
+A Django project contains one or more applications which means we create application inside Project
+Folder.
+Syntax:- python manage.py startapp appname
+
+Creating One Application inside Project
+    Go to Project Folder
+    Run Command python manage.py startapp course
+
+Creating Multiple Applications inside Proiect:
+    Go to Project Folder
+        python manage.py startapp course
+        python manage.py startapp fees
+        Python manage.py startapp result
+
+
+How to install Application in our project
+    As we know a Django project can contain multiple application so just creating application inside a project is not enough we also have to install application in our project.
+
+    We install application in our project using settings.py file.
+
+    settings.py file is available at Project Level which means we can install all the application of project.
+
+    This is compulsory otherwise Application won't be recognized by Django.
+
+    Open settings.py file
+    INSTALLED APPS = [
+        'django.contrib.admin',
+        'application_namel',
+        'application_name2',
+    ]
+    Save settings.py File
+
+    example:- 
+    INSTALLED APPS = [
+        django.contrib.admin
+        'course'
+        'fees',
+        'result',
+    ]
+
+
+-------------------STEPS----------------------
+Create Django Project: django-admin startproject geekyshows
+Change Directory to Django Project: cd geekyshows
+Create Django Application: python manage.py startapp course
+Add/Install Application to Django Project (course to geekyshows)
+    Open settings.py
+    Add course
+        INSTALLED_APPS  = ['django.comtrib.admin', 'course', ]
+    Save settings.py
+
+
+
+-------------- APPLICATION DIRECTORY STRUCTURE --------------------
+
+Go to Project Folder
+Run Command python manage.py startapp course
+course
+    migrations
+        __init__.Py
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    Views.py
+
+
+migrations - This folder contains __init__.py file which means it's a python package. It also contains all files which are created after running makemigration command.
+
+__init__.Py - The folder which contains __init__.py file is considered as Python Package.
+
+admin.py - This file is used to register sql tables so we could perform CRUD operation from Admin Application.
+Admin Application is provided by Django to pertorm CRUD operation.
+
+apps.py - This file is used to config app.
+
+models.py - This file is used to create our own model class later these classes will be converted into database table
+by Django for our application.
+
+tests.py - This is files is used to create tests.
+
+views.py- This file is used to ereate view. We write all the business logic related code in this file.

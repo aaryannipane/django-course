@@ -1,0 +1,58 @@
+M - Model
+V - View
+T - Template
+
+we are going to study now View
+
+view are of two type 
+1) Function Based View
+2) Class Based View 
+
+1) Function Based View:- 
+    A function based view, is a Python function that takes a Web request and returns a Web response.
+    
+    This response can be the HTML contents of a Web page, or a redirect, or a 404 error, or an XML document, or an image or anything.
+
+    Each view function takes an HttpRequest object as its first parameter.
+    
+    The view returns an HttpResponse object that contains the generated response. Each view function is responsible for returning an HttpResponse object.
+
+    We will call these functions as view function or view function of application or view.
+    
+    Syntax:
+        def function_name (request):
+            return HttpResponse('html/variable/text')
+
+        -request : HttpRequest object
+        -HttpResponse : it's Class
+        -'html/variable/text' : HttpResponse object
+
+    We use views.py file of the application to write functions which may contain business logic of application, later it required to define url name for this function in the urls.py file of the project.
+    Syntax:- 
+        (file) course/views.py
+
+        from django.http import HttpResponse
+        def function_name (request):
+            return HttpResponse('html/variable/text')
+
+        Where HttpResponse is class which is in django.http module so we have to import it before using HttpResponse.
+
+
+    SINGLE APPLICATION WITH SINGLE VIEW FUNCTION / MULTIPLE VIEW FUNCTION 
+
+    course/views.py 
+    from django.http import HttpResponse
+    def learn_django(request):
+        return HttpResponse('Hello World')
+
+    exampleproject/urls.py 
+    from course import views
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('learndj/', views.learn_django),
+    ]
+
+    then start server using below command
+    python manage.py runserver 5555
+
+    then visit http://localhost:5555/learndj/

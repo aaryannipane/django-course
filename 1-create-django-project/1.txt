@@ -1,0 +1,28 @@
+install django using command in cmd
+pip install django 
+
+then to create project use command in cmd
+django-admin startproject project_name
+
+it will create a new folder with the project_name
+
+inside folder demoproject/demoproject there are files
+    __init__.py - The folder which contains_init py file is considered as python package.
+
+    wsgi.py     - WSGI (Web Server Gateway Interface) is a specification that describes how a web server communicates with web applications, and how web applications can be chained together to process one . WSGI provided a standard for synchronous Python apps.
+
+    asgi.py     - ASGI (Asynchronous Server Gateway Interface) is a spiritual successor to WSGI, intended to provide a standard iterface between async-capable Python web servers, frameworks, and applications. ASGI provides standard for both asynchronous and synchronous apps.
+
+    settings.py - This file contains all the information or data about project settings.
+                E.g.- Database Config information, Template, Installed Application, Validators etc.
+
+    urls.py     - This file contains information of url attached with application.
+
+    manage.Py   - manage.py is automatically created in each Django project. It is Django's command-line utility also sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project's settings.py file. Generaly, When working on a single Django project, it's easier to use manage.py than django-admin.
+
+
+to start server type in cmd in outer folder
+python manage.py runserver
+
+we can specify port number by using below command
+python manage.py runserver 5555

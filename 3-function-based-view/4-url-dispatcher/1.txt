@@ -1,0 +1,47 @@
+URL DISPATCHER / URL PATTERN
+
+To design URLs for app, you create a Python module informally named urls.py This module is pure Python code and is a mapping between URL path expressions to view functions.
+
+This mapping can be as short or as long as needed.
+
+It can reference other mappings.
+
+It's pure Python code so it can be constructed dynamically.
+
+urls.py
+    urlpatterns=[
+        path(route, view, kwargs=None, name=None)
+    ]
+
+urls.py
+    urlpatterns = [
+        path ('learndj', views.learn_django),
+    ]
+
+
+path() :- 
+    path(route, view, kwargs=None, name=None) - It returns an element for inclusion in urlpattems.
+
+    Where,
+    1) The route argumcnt should be a string or gettext lazy() that contains a URL pattern.
+    The string may contain angle brackets e.g. <username> to capture part of the URL and send it as a keyword argument to the view. The angle brackets may include a converter specification like the int part of <int:id> which limits the characters matched and may also change the type of the variable passed to the view. For example, <int:id>
+    matches a string of decimal digits and converts the value to an int.
+
+    2)The view argument is a view function or the result of as_view() for class-based views.
+    It can also be an django.urls.include().
+
+    3)The kwargs argument allows you to pass additional arguments to the view fuction or method.
+    It should be a dictionary.
+
+    4)name is used to perform URL reversing.
+
+    example :- 
+        urls.py
+            urlpattems =[
+                path(route, view, kwargs=None, name=None)
+            ]
+
+        urls.py
+            urlpatterns=[
+                path('learndj/', views.learn_Django, {'check': 'OK'}, name='learn_django'),
+            ]
