@@ -1,0 +1,31 @@
+Multiple Application inside Project and their Function Based Views in Django 
+
+steps :- 
+go to project folder
+then run command 
+py manage.py startapp application_name
+then go to inner project folder and inside settings.py write our application_name 
+
+
+FUNCTION BASED VIEW 
+
+Views.py in course
+from django.http import HttpResponse
+def learn_course(request):
+    return HttpResponse("Hello Course")
+
+Views.py in fees
+from django.http import HttpResponse
+def pay_fees(request):
+    return HttpResponse("Hello Fees")
+
+
+URL PATTERN inside inner project folder
+go to urls.py
+from course import views as cv
+from fees import views as fv
+
+urlpatterns =[
+    path('learncourse', cv.learn_course),
+    path('payfees', fv.pay_fees),
+]

@@ -1,0 +1,73 @@
+URL Dispatcher or URL Pattern inside Application in Django 
+
+it helps to make independent Application not completely independent
+
+include():-
+    A function that takes a full Python import path to another URLconf module that should be "included" in this place.
+
+    Optionally, the application namespace and instance namespace where the entries will be included into can also be
+    Specified.
+
+    include() also accepts as an argument either an iterable that returns URL patterns or a 2-tuple containing such iterable plus the names of the application namespaces.
+
+    urlpatterns can "include" other URLconf modules.
+
+    Syntax:
+        include(module, namespace=None)
+        include(pattern_list)
+        include((pattern_list, app_namespace), namespace=None)
+
+    Where:
+        module - URLconf module (or module name) 
+        URLconf - it is technical name of urls.py file
+        namespace (str) - Instance namespace for the URL entries being included
+        pattern_list - iterable of path() and/or re_path() instances
+        app_namespace (str) - Application namespace for the URL entries being included
+
+    Example: 
+        from django.urls import include, path
+        urlpatterns = [
+            path('cor/', include('course.urls')),
+        ]
+        OR
+        urlpatterns = [
+            path('cor/', include([
+                path('learndj/', 'views.urls')),
+                path('payfee/', include('views.urls')),
+            ])),
+        ]
+        OR 
+        otherpatterns = [
+                path('learndj/', 'views.urls')),
+                path('payfee/', include('views.urls')),
+            ]
+        urlpatterns = [
+            path('cor/', include(otherpatterns)),
+        ]
+
+
+
+
+write URL pattern inside Application
+    create urls.py file inside each Application (in case of multiple application)
+    Write all url pattern related to application, in urls.py file available inside application.     
+    Include Application's urls.py file inside Project's urls.py file.
+
+
+    Example:-
+
+        urls.py file inside application folder
+        from course import views
+        urlpatterns = [
+                path('learndj/', views.learn_django)),
+                path('learnpy/', views.learn_python),
+            ]
+
+        urls.py file in Project folder
+        from django.urls import path, include
+        urlpatterns = [
+                path('cor/', include('course.urls')),
+            ]
+
+        access the views by 
+        http://localhost:8000/cor/learndj
