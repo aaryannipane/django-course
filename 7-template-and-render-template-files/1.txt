@@ -1,0 +1,54 @@
+Template and How to Render Template Files in Django
+
+Template
+    A template is a text file. It can generate any text-based format (HTML, XML, CSV, etc.).
+    A template contains variables, which get replaced with values when the template is evaluated, and tags, which control the logic of the template.
+    Template is used by view function to represent the data to user.
+    User sends request to view then view contact template afterthat view get information from the template and then view gives response to the users.
+
+CREATING TEMPLATE FOLDER AND Files
+    We create templates folder inside Outer Project Folder. templates folder will contain all html files.
+
+ADD TEMPLATES IN SETTING.PY 
+    go to inner project folder inside that go to settings.py file 
+    write 
+    TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+    TEMPLATES = [
+        {
+            'DIRS':[TEMPLATES_DIR],  # directories where the engine should look for template source file, in search order
+        }
+    ]
+WRITE TEMPLATE FILES 
+    write html code inside template files
+
+RENDERING TEMPLATES Files
+    views.py will be responsible to process the template files for this we will use render() function in views.py file.
+
+    views.py
+        from django.shortcuts import render
+
+        def function_name(req):
+            Dynamic data, if else, any python code logic
+            return render(req, template_name, context=dict_name, content_type=MIME_type, status=None, using=None)
+
+    
+    example:- 
+        def learn_django(request):
+            return render(request, 'courseone.html')
+
+RENDER() FUNCTION :-
+    render () Function - It combines a given template with a given context dictionary and returns an HttpResponse object with that rendered text.
+
+    syntax:- 
+        render(req, template_name, context=dict_name, content_type=MIME_type, status=None, using=None)
+        WHERE,
+            request - The request object used to generate this response.*
+            template_name - the full name of a template to use or sequence of template names. if sequence is given, the first template that exists will be used.*
+            context - A dictionary of values to add to the template context . by default, this is an empty dictionary. if a value in the dictionary is callable , the view will call it just before rendering the template.
+            content_type - the MIME type to use for resuting document. default to 'text/html'.
+            status - the status code for the response. default is 200(OK)
+            using - the NAME of the template engine to use for the loading of the template
+
+    example:- 
+        render(request, 'course.html', context=cname, content_type='application/xhtml+xml')
