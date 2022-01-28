@@ -1,0 +1,14 @@
+Dynamic Template Files using DTL(DYNAMIC TEMPLATE LANGUAGE)
+
+we can Dynamicly change data in html file as example given below
+
+home.html   
+    <h1>Hello {{cname}}</h1>
+
+here 'pname' is variable which value is in views file which render this template 
+inside view file we can pass data as shown below
+
+view.py
+    def showCourse(request):
+        courses = {'cname' : "Django"}
+        return render(request, 'course/courseOne.html', context=courses)

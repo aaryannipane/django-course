@@ -1,0 +1,12 @@
+Creating and Rendering Templates File For each Application Separately
+
+We can create separate folder inside templates tolder for applications then each application will contain only those html file which are related to them. This will enhance readability and separate html files according to applications.
+
+create template folder in outer project folder then create folders inside template folder for application
+then add template folder to settings.py same as previous topic
+
+
+RENDER TEMPLATE FILES
+inside view file 
+def sendCourse(request):
+    return render(request, 'course/courseOne.html')
