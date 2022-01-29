@@ -1,0 +1,53 @@
+DJANGO TEMPLATE LANGUAGE
+
+Django's template language is designed to strike a balance between power and ease. It's designed to feel comfortable to those used to working with HTML.
+
+example:- 
+    <html>
+        <body>
+            <h1>Hello {{uname}} you are {{age}} old</h1>
+        </body>
+    </html>
+
+JINJA2 -
+    Jinja2 - Jinja is a modern and designer-friendly templating language for Python, modelled after Django's templates. It is fast, Widely used and secure with the optional sandboxed template execution environment.
+    to use jinja2 we have to install it using command
+    $ python pip install jinja2 
+
+    then inside settings.py we have to write
+    'BACKEND':'django.template.backends.jinja2.Jinja2'
+
+VARIABLES - 
+    Variables look like this: {{ variable }} When the template engine encounters a variable, it evaluates that variable and replaces it with the result.
+    Rules:-
+        Variable names consist of any combination of alphanumeric characters and the underscore.
+        Variable name should not start with underscore.
+        Variable name can not have spaces or punctuation characters.
+    Syntax:- {{variable}}
+    Example:- {{nm}}, {{name1}}, {{first_name}}
+
+FILTERS -
+    When we need to modity variable before displaying we can use filters. Pipe "|" is used to apply filter.
+    Syntax:- {{variable | filter}}
+    Example:- {{name | upper}}
+
+    * some of filter take argument
+    syntax:- {{variable | filter: argument}}
+    example:- {{article | truncateword: 40}}
+
+    * filter can be chained
+    syntax:- {{variable | filter | filter}}
+    syntax:- {{variable |  upper | truncateword: 20}}
+
+    capfirst - It capitalizes the first character of the value. If the first character is not a letter, this filter has no effect.
+        Example:- {{ value | capfirst }}
+
+    default - If value evaluates to False, uses the given default. Otherwise, uses the value.
+        Example:- {{ value | default:"nothing" }}
+    If value is "" (the empty string), the output will be nothing.
+
+    length - It returns the length of the value. This works for both strings and lists. The filter returns 0 for an undefined variable.
+        Example:- {{ value | length }}
+
+    lower - It converts a string into all lowercase.
+        Example:- {{ value | lower }}
