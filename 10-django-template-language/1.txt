@@ -51,3 +51,9 @@ FILTERS -
 
     lower - It converts a string into all lowercase.
         Example:- {{ value | lower }}
+
+    date - It formats a date according to the given format.
+        Example{{value | date:"D d M Y"}}
+
+    time -It formats a time according to the given format.
+        Example:-{{value | time:"H":"i"}}

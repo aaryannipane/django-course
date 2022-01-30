@@ -1,0 +1,48 @@
+IF TAG :-
+    {% if %} tag - The {% if %} tag evaluates a variable, and if that variable is "true" (i.e. exists, is not empty, and is not a false boolean value).
+    Syntax:
+        {% if variable %}
+            ***
+        {% endif %}
+
+    Example:
+        {% if nm %}
+            <h1>Hello {{nm}}</h1>
+        {% endif %}
+
+        {% if nm and st %}
+            <hl> For Course {{nm}} {{st}} Seat Available</hl>
+        {% endif %}
+
+        {% if nm or st %}
+            <hl>Seat Available</hl>
+        {% endif %}
+
+        {% if not nm%}
+            <hl>Seat Not Available</hl>
+        {% endif %}
+
+IF TAG WITH CONDITION:-
+    Syntax:-
+        {%if condition %}
+        ...
+        {% endif %}
+
+    Example:-
+        {% if nm=='Django' %}
+            <h1>Hello {{nm}}</h1>
+        {% endif %}
+
+        {% if nm=='Django' and st-5 %
+            <h1>{{nm}} Seat Available</h1>
+        {% endif %}
+        
+        {% if nm == 'Django' or st==5 %}
+            <hl>{{nm}} Seat Available</h1>
+        {% endif %}
+
+        {% if not st==5 %}
+            <h1>Seat Not Available</h1>
+        {% endif %}
+
+    if tags may also use the operators ==,!=, <, >, <=, >=, in, not in, is, and is not
