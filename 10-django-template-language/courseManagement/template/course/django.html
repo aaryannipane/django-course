@@ -14,6 +14,72 @@
 	<body>
 		<!-- method 1 -->
 		<h1>Hello Welcome to {{cname | upper}}.<br>date and time is {{dt|date:'D d M Y H:i'}}.<br>Amount is {{price|floatformat:2}}</h1>
+
+		<!-- if tag with filter -->
+		{% if cname|length <= 10 %}
+			<p>if tag filter code</p>
+		{% endif %}
+
+		<!-- if else tag -->
+		{% if cname|length >= 10 %}
+		<p>course name length is greater than 10</p>
+		{% else %}
+		<p>course name length is less than 10</p>
+		{% endif %}
+
+		<!-- if elif tag -->
+		{% if cname|length >= 5 %}
+		<p>course name length is greater or equal to 5</p>
+		{% elif cname|length < 5 %}
+		<p>course name length is less than 5</p>
+		{% endif %}
+
+
+		<!-- for loop for list -->
+		<p>for loop for list</p>
+		<ul>
+			{% for stu in students %}
+				<li>{{stu}}</li>
+			{% endfor %}
+		</ul>
+
+		<!-- for loop for list reversed -->
+		<p>for loop for list reversed</p>
+		<ul>
+			{% for stu in students reversed %}
+				<li>{{stu}}</li>
+			{% endfor %}
+		</ul>
+
+		<!-- for loop for dictionary -->
+		<p>for loop for dictionary</p>
+		<ul>
+			{% for key, value in vidhyatri.items %}
+				<li>{{key}} : {{value}}</li>
+			{% endfor %}
+		</ul>
+
+		<!-- for loop variables -->
+		<p>for loop variables </p>
+		{% for stu in students %}
+			<p>{{forloop.counter}}. {{ stu }}</p>
+			{% if forloop.counter == 1 %} active {% endif %}
+		{% endfor %}
+
+		<!-- complex data example -->
+		<p>{{ cars }}</p> <!-- raw data -->
+		<p>{{ cars.car1 }}</p> <!-- one element data -->
+		<p>{{ cars.car1.name }}</p> <!-- elements elements data -->
+
+		<!-- nested for loop for complicated data -->
+		<p>nested for loop for complicated data</p>
+		{% for key, value in cars.items %}
+		<span>{{key}}</span><br>
+		{% for k, v in value.items %}
+		<span>{{forloop.parentloop.counter}} {{k}} : {{v}}</span><br>
+		{% endfor %}
+		{% endfor %}
+
 	</body>
 
 </html>

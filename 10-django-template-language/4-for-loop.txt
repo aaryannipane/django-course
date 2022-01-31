@@ -1,0 +1,33 @@
+FOR LOOP:-  
+    syntax:-
+        {% for variable in variables %}
+            {{ variable }}
+        {% endfor %}
+
+    example:-
+        <ul>
+        {% for stu in students %}
+            <li>{{ stu }}</li>
+        {% endfor %}
+        </ul>
+
+
+    syntax:-
+        {% for variable in variables %}
+            {{ variable }}
+        {% empty %}
+            Empty
+        {% endfor %}
+
+
+FOR LOOP FOR KEY VALUE PAIR
+    syntax:- 
+        {% for key, value in data.items %}
+            {{key}}:{{value}}
+        {% endfor %}
+
+FOR LOOP VARIABLE:-
+    syntax:-
+        {% for stu in students %}
+            {{ forloop.counter }} {{ stu }}
+        {% endfor %}

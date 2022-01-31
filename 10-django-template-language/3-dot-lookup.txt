@@ -1,0 +1,6 @@
+DOT LOOKUP:- 
+    Technically, when the template system encounters a dot, it tries the following lookups, in this order:
+
+    - Dictionary lookup
+    - Attribute or method lookup
+    - Numeric index lookup

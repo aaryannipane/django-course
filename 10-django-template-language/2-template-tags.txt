@@ -46,3 +46,34 @@ IF TAG WITH CONDITION:-
         {% endif %}
 
     if tags may also use the operators ==,!=, <, >, <=, >=, in, not in, is, and is not
+
+IF TAG WITH FILTER:- 
+    Syntax:
+        {% if variable|filter %}
+            .......
+        {% endif %}
+
+        Example:-
+        {% if nm|length >= 6 %}
+            <h1>Hello {{nm}}</hl>
+        {% endif %}
+
+IF ELSE TAG:- 
+    example:-
+        {% if nm|length >= 6 %}
+            <h1>length is greater or equal to 6</h1>
+        {% else %}
+            <h1>length is not greater or equal to six</h1>
+        {% endif %}
+
+IF ELIF ELSE TAG:- 
+    example:-
+        {% if nm|length > 6 %}
+            <h1>length is greater than 6</h1>
+        {% elif nm|length < 6 %}
+            <h1>length is less than six</h1>
+        {% elif nm|length = 0 %}
+            <h1>length is zero</h1>
+        {% else %}
+            <h1>length is equal to six</h1>
+        {% endif %}
