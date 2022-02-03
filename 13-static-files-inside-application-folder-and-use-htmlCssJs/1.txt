@@ -1,0 +1,11 @@
+HOW TO CREATE STATIC FOLDER AND FILES INSIDE APPLICATION 
+
+We create static folder inside Application Folder then inside static folder we create required folders which will contain
+all static files respectively like css folder will contain all css files, image folder will contain all images and so on.
+
+
+ADD STATIC FILE IN SETTINGS.PY 
+    no changes in static file
+
+USE STATIC FILES IN TEMPLATES FILES 
+    same as previous section

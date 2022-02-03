@@ -1,0 +1,117 @@
+STATIC FILE
+
+    CSS files, Javascript Files, image files, video files ete are considered as static files in Django.
+    Django provides django.contrib.staticfiles to help you manage them.
+    'django.contrib.staticfiles' collects static files from each of your applications (and any other places you
+    specify) into a single location that can easily be served in production.
+
+HOW TO CREATE STATIC FOLDER AND Files
+
+    We create static folder inside Root Project Folder then inside static folder we create required folders
+    which will contain all static files respectively like css folder will contain all css files, image folder
+    will contain all images and so on.
+
+ADD STATIC IN SETTINGS.PY
+
+    settings.py 
+        TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+        // it's same as template 
+        STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+        // add below lines 
+        STATIC_URL = "/static/"
+        STATICFILES_DIRS = [STATIC_DIR]
+
+
+USE STATIC FILES IN TEMPLATE FILES 
+    - first load static file 
+    - reference static file
+
+    trmplates/course
+    courseOne.html
+
+        <!DOCTYPE html>
+        <% load static %>   // loading static Files
+
+        <html>
+            <link href="{% static "css/style.css" %}">  // reference to static file 
+            <body>
+
+
+LOAD TEMPLATE TAG 
+
+    {% load module_name %} - It loads a custom template tag set.
+    Example:- {% load emotags %}
+    Example:- {% load geek.mytags %}
+    Example:- {% load emotags geek.mytags}
+    Template would load all the tags and filters registered in emotags and mytags located in package geek.
+
+
+    You can also selectively load individual filters or tags from a library or module, using the from argument.
+    Example - {% load cry lol from emotags %}
+    The template tags/filters named cry and lol will be loaded from emotags.
+
+
+STATIC TEMPLATE TAG
+
+    {% static filename %} - This tag is used to link to static files that are saved in STATIC_R00T. If thee
+    django.contrib.statictfiles app is installed, the tag will serve files using url() method of the storage specified by
+    STATICFILES_STORAGE.
+
+    Syntax:
+    {% load static %}
+    {% static filename %}
+    {% static path/filename %}
+    {% static path/filename as variable %}
+
+    Example:-
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <img src="{% static 'images/car.jpg' %}">
+    {% static 'images/car.jpg' as cars %}
+    <img src="{{ cars }}">
+
+
+get_static_prefix TEMPLATE TAG 
+
+    {% get_statie_prefix %}- We should prefer the static template tag, but if you need more control over
+    exactly where and how STATIC_URL is injected into the template, you can use the get_static _prefix
+    template tag.
+
+    Example:
+    {% load static %}
+    <img sre={% get_static_prefix %}images/love.jpg">
+
+    There's also a second form you can use to avoid extra processing if you need the value multiple times.
+    {% load static %}
+    {% get_static _prefix as STATIC_PREFIX %}
+    simg src="{{ STATIC_PREFIX } images/love.jpg">
+    <img src="{{ STATIC_PREFIX }}images/pic1.jpg">
+
+
+STATIC_URL - This is the URL to use when referring to static file located in STATIC_ROOT. It must end in a slash
+if set to a non-empty value.
+
+Example:"/static/"
+Example: "http://static.example.com/"
+
+STATIC ROOT- This is absolute path to the directory where collectstatic will collect static files for deployment. It
+is by default None.
+
+Example: "/var/www/example.com/static/"
+Example:- os.path.join(BASE_ DIR, 'static/')
+
+STATICEILES_DIRS - This setting defines the additional locations the staticfiles app will traverse if the
+Filesystemfinder finder is enabled, e.g. if you use the collecistatic or findstatic management command or use the
+static file serving view. It is by de fault an empty list.
+
+STATICFILES DIRS=[
+    "/home/special,geek.com/geek/static",
+    "/home/geek.com/geek/static",
+    "/opt/webfiles/common",
+]
+
+STATICFILES_STORAGE - The file storage engine to use when collecting static files with the
+collectstatic management command.
+Default: 'django.contrib.staticfiles.storage.StaticFilesStorage'

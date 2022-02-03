@@ -1,0 +1,9 @@
+Templates inside Application in Django
+
+create templates folder inside Application folder 
+
+when we create templates folder inside Application folder then we don't have to write in settings.py file for the template folder 
+
+** REMEMBER :- 
+    check 'APP_DIRS': True  in settings.py 
+        TEMPLATES = [{'APP_DIRS':True}]
