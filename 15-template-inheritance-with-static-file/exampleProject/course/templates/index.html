@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+<!-- WE ARE OVERWRITING DATA HERE DEFAULT DATA WAS BASE FILE -->
+<!-- to use default data we can use {{block.super}} keyword -->
+{% block title %}
+{{ block.super }} |
+HOME PAGE
+{% endblock title %}
+
+{% block aryan %}
+
+<h1>Hello Aryan this file is in course application</h1>
+
+{% endblock aryan %}

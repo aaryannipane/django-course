@@ -1,0 +1,11 @@
+URL TAG :- 
+
+    {%url %} - It returns an absolute path reference (a URL without the domain name)
+    matching a given view and optional parameters. Any special characters in the
+    resulting path will be encoded using iri_to_uri().
+
+    Syntax :-
+    {% url 'urlname' %}
+    {% url 'urlname' as var %}
+    {% url 'urlname' arg1=value1 arg2=value2 %}
+    {% url 'urlname' value1 value2 %}

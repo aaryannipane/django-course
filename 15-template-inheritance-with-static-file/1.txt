@@ -1,0 +1,23 @@
+Template Inheritance with Static File
+
+create core application in root folder 
+core application will serve css, js and images to other applications
+create static folder inside core folder 
+inside static folder create core/css and images, js folder
+
+then inside core application create templates folder 
+inside templates folder create base.html file which is parent file 
+inside base.html we will load static file 
+then link css file 
+
+then inherit this base.html file in same application or another application
+
+to inherit this core application templates files 
+we have to give path of templates_dir to that templates folder like
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'core/templates')
+
+then add this to templates list inside dirs key
+
+and to add static folder we have to change settings.py
+
