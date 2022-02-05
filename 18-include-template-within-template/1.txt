@@ -1,0 +1,25 @@
+How to include template within template using include Tag
+
+INCLUDE TAG:- 
+    {% include %} Tag - It loads a template and renders it with the current context. This is a way of "including"
+    other templates within a template. Each include is a completely independent rendering process.
+    The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+
+    Syntax:
+        {% include temp_var_name %}
+        {% include "template _name.html" %}
+        {% include "folder/template_name.html" %}
+
+    Example:-
+        {% include topvar %}
+        {% include "topcourse.html" %}
+        {% include "fees/extrafees.html" %}
+
+
+    We can pass additional context explicitly to the template using 'with' keyword.
+    {% include "topcourse.html" with p="PHP" d="Django" %}
+
+    If we want to render the context only with the variables provided (or even no
+    variables at all), use the only option. No other variables are available to the included
+    template.
+    {% include "topcourse.html" with p="PHP" only %}

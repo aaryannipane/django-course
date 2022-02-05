@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPERLINK IN DJANGO</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <!-- first easy method -->
+            <li><a href="/course">Course</a></li>
+            <!-- BEST third difficult method -->
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    <h1>This is Home Page</h1>
+    {% endblock content %}
+
+</body>
+</html>
