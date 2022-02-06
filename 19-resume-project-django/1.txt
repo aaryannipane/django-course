@@ -1,0 +1,68 @@
+to deploy this project we should know what packages we used in this project 
+by running command inside project folder
+
+$ pip freeze
+
+to store names of packages in file write
+$ pip freeze > filename.txt
+
+then define static_root path in settings.py file write
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+then make compress zip of project folder
+
+then create account in pythonanywhere.com site
+
+then upload our zip file 
+
+then goto bash console 
+
+then we have to create virtual environment in it
+type command 
+$ mkvirtualenv <env_name> --python=/usr/bin/python3.8
+
+now activate the environment by command
+$ workon env_name
+
+now to unzip files write
+unzip projectFolderName
+
+now goto web tab and create new web app with manual configuration
+
+then find virtualenv option and write name of your env there
+
+in virtualenv
+now open console bash and goto project folder 
+then install all packages using command
+pip install -r req.txt
+here req.txt is file that has all packages name
+
+
+then goto web tab and to wsgi.py file 
+
+then only keep django code in that file
+
+then replace mysite with inner project folder name
+
+then save close file and go to file tab
+and now goto settings.py file
+
+then change DEBUG to False from True
+
+and write in allowed_host = ['*']
+
+save and close 
+
+now goto console
+and type command 
+$ python manage.py collectstatic
+
+now goto web tab 
+and find static file section
+then in url write 
+/static/
+
+and in directory write 
+/home/resumeweb/resumeWeb/static/
+
+then click on relode site

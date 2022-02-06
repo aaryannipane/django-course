@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANNAY FOLIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+    {% block corecss %}
+    <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+    {% endblock corecss %}
+</head>
+<body>
+
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-sm-2">
+                {% include 'core/sidebar.html' %}
+            </div>
+            <div class="col-sm-10">
+                {% block content %}
+                    Base Content
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- javscript files -->
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

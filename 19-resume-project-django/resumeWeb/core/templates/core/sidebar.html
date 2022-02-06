@@ -1,0 +1,15 @@
+{% load static %}
+<div class="container-fluid border-end border-warning h-100 p-0">
+    <div class="text-center">
+        <!-- <img src="{% static 'core/images/user.jpg' %}" alt="Profile pic" class="img-fluid rounded-circle mt-5 " style="height:100px;width:100px;"> -->
+        <img src="{% static 'core/images/user2.jpg' %}" alt="Profile pic" class="img-fluid rounded-circle mt-5 " style="height:100px;width:100px;object-fit: cover;">
+        <h6 class="text-white mt-3">Tanmay Mhatre</h6>
+    </div>
+    <hr class="border border-white">
+    <nav class="nav flex-column text-center">
+        <a href="{% url 'home' %}" class="nav-link {{ home }}">Home</a>
+        <a href="{% url 'services' %}" class="nav-link {{ service }}">Services</a>
+        <a href="{% url 'skills' %}" class="nav-link {{ skill }}">Skills</a>
+        <a href="{% url 'contact' %}" class="nav-link {{ contact }}">Contact</a>
+    </nav>
+</div>

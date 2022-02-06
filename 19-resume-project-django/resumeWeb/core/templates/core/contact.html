@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h1 class="text-warning mb-5 border-bottom">CONTACT ME</h1>
+    <div class="row text-white mb-5">
+        <p class="mx-auto mb-5 text-center">Do you have any Questions? Please do not hesitate to contact. I will hack you either</p>
+        <div class="col-sm-9 mb-5">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group col-ms-6">
+                        <label for="inputName">Your Name</label>
+                        <input type="text" class="form-control" id="inputName">
+                    </div>
+                    <div class="form-group col-ms-6">
+                        <label for="inputEmail">Your Email *</label>
+                        <input type="email" class="form-control" id="inputEmail" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSubject">Your Subject</label>
+                    <input type="text" class="form-control" id="inputSubject">
+                </div>
+                <div class="mb-3">
+                    <label for="inputTextarea">Your Message *</label>
+                    <textarea id="inputTextarea" class="form-control" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+        </div>
+        <div class="col-sm-3 text-center">
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fas fa-map-marker-alt fa-2x i-color"></i>
+                    <p>Somewhere, India</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone mt-4 fa-2x i-color"></i>
+                    <p>+ 91 9000 1000</p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope mt-4 fa-2x i-color"></i>
+                    <p>noemail@gamil.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+<a href="javascript:void(0)">
+    <i class="fab fa-twitter mr-3 i-color"></i>
+</a>
+<a href="javascript:void(0)">
+    <i class="fab fa-facebook-f mr-3 i-color"></i>
+</a>
+<a href="javascript:void(0)">
+    <i class="fab fa-instagram mr-3 i-color"></i>
+</a>
+<a href="javascript:void(0)">
+    <i class="fab fa-dribbble i-color"></i>
+</a>
+</div>
+
+{% endblock content %}

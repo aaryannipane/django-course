@@ -1,21 +1,22 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
-</head>
-<body>
 
-    <h1>Hello</h1>
+{% block content %}
 
+<div class="text-center">
+    <!-- <img src="{% static 'core/images/user.jpg' %}" alt="user_image" class="img-thumbnail mt-5" width="250px"> -->
+    <img src="{% static 'core/images/user3.jpg' %}" alt="user_image" class="img-thumbnail mt-5" width="150px">
+    <div class=" mt-5 text-white text-start mx-5 text-justify">
+        <h1 class="font-weight-bold">Hello,</h1>
+        <div class="px-4" style="line-height: 2rem;">
+            <p style="text-indent: 100px;">I am <b class="text-warning"> Tanmay Mhatre </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam qui error sequi quos? Placeat dolorem quo alias magni aperiam harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est tempore corrupti. Velit incidunt nam commodi voluptatibus recusandae. Quas, velit?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates amet saepe commodi culpa consequatur in deleniti excepturi non. Ipsam est aperiam harum deserunt adipisci fuga optio, consequuntur aspernatur aut dolorem quia a. Perspiciatis quod nihil saepe fuga nam dolor sapiente laboriosam, minus optio odit, quas expedita illo atque. Ab mollitia aliquam id consequatur voluptate impedit earum nulla libero exercitationem, sed ipsa fuga voluptates? Dolorem alias deserunt harum, similique, repellendus aspernatur incidunt maxime libero non reprehenderit consequuntur. Est eos assumenda modi?</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="{% url 'contact' %}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+        <a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Contact</a>
+    </div>
+</div>
 
-    <!-- javscript files -->
-    <script src="{% static 'core/js/jquery.js' %}"></script>
-    <script src="{% static 'core/js/popper.js' %}"></script>
-    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
-</body>
-</html>
+{% endblock content %}
