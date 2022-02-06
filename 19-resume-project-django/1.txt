@@ -66,3 +66,5 @@ and in directory write
 /home/resumeweb/resumeWeb/static/
 
 then click on relode site
+
+then open site url 
