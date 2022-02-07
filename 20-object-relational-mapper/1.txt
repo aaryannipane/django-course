@@ -1,0 +1,27 @@
+Object Relational Mapper and QuerySet
+
+    Object-Relational Mapper (ORM), which enables application to interact with
+    database such as SQLite, MysQL, PostgreSQL, Oracle.
+
+    ORMs automatically create a database schema from defined classes or models. It
+    generate SQL from Python code for a particular database which means developer do
+    not need to write SQL Code.
+
+    ORM maps objccts attributes to respective table ficlds.
+
+    It is casier to change the database if we use ORMs hence project becomes more
+    portable.
+
+    Django's ORM is just a way to create SQL to query and manipulate your databa
+    and get results in a pythonic fashion.
+
+    ORMs use connectors to connect databases with a web application.
+
+
+QUERYSET
+    A QuerySet can be defined as a list containing all those objects we have created
+    using the Django model.
+
+    QuerySets allow you to read the data from the database, filter it and order it.
+
+    Querysets are generally associated with CRUD applications.
