@@ -1,0 +1,40 @@
+Show or Retrieve Database Table Data to User
+
+writing Code to get data from database in views.py then pass it to template files using render function
+Get Data which is passed by render function of views.py file in template file
+
+
+all():- 
+It returns a copy of current QuerySet or QuerySet Subclass.
+Syntax:
+    ModelClassName.objects.all()
+
+
+WRITING CODE TO GET DB DATA IN VIEWS.PY 
+    first import your own model class from models.py 
+    Example:
+    views.py
+    from enroll.models import Student
+    def studentinfo(request):
+        stud = Student.objects.all()
+        return render(request, 'enroll/studetails.html', {'stu':stud})
+
+
+GET DATA FROM VIEWS.PY IN TEMPLATE FILE
+
+    templates/enroll/ studetails.html
+    <IDOCTYPE html>
+    <html>
+        <body>
+            <hl>Student Page</hl>
+            {% if stu %}
+                <hl>Show Data</h1>
+                {% for st in stu %}
+                    <h5> {{st.stuid}} <h5>
+                    <h5>{{st.stuname}}</h5>
+                {% endfor %}
+            {% else %}
+                <h1>No Data/hl>
+            {% endif %}
+        </body>
+    </html>
