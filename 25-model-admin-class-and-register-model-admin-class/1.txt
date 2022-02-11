@@ -1,0 +1,52 @@
+MODEL ADMIN CLASS
+
+    The ModelAdmin class is the representation of a model in the admin interface.
+
+    To show table's all data in admin interface we have to create an ModelAdmin class in
+    admin.py file of Application folder.
+
+    Syntax:
+        Creating Class
+        Class ModelAdminClassName(admin.ModelAdmin):
+            # ModelAdmin Options
+            list_display = (fiealdnamel', 'fiealdname2,...)
+
+        # Register Above Created Class
+        admin.site.register(ModelClassName, ModelAdminClassName)
+
+    Example: -
+    class StudentAdmin(admin.ModelAdmin):
+        list_display('id', 'stuid', 'stuname')
+
+    admin.site.register(Student, StudentAdmin)
+
+
+LIST_DISPLAY :-
+
+    Set list_display to control which fields are displayed on the change list page of the admin. If you don't set
+    list_display, the admin site will display a single column that displays the __str__() representation of each object
+
+    There are four types of values that can be used in list_display:
+        - The name of a model field.
+        - A callable that accepts one argument, the model instance.
+        - A string representing a ModelAdmin method that accepts one argument, the model instance.
+        - A string representing a model attribute or method (without any required arguments).
+
+
+REGISTER MODEL BY DECORATOR
+
+    A decorator can be used to register ModelAdmin Casses.
+
+    Syntax:- @admin.register(ModelCassName 1, ModelClassName2,.. ,site=custom_admin_site)
+
+    Register Model Classes
+    @admin.register(ModelClassName)
+    Creating Cass
+    Class ModelAdminClass Name(admin.ModelAdmin):
+        list display=('fieldname1', 'fieldname2',...)
+
+
+    Example:-
+    @admin.register(Student)
+    class StudentAdmin(admin.ModelAdmin):
+        list_display = ('id', 'stuid', 'stuname')
