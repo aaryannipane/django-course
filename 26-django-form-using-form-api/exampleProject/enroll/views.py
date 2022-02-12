@@ -6,8 +6,5 @@ from .forms import StudentRegistration
 
 def showForm(req):
     # load form object 
-    # fm = StudentRegistration(auto_id='some_%s')
-    # fm = StudentRegistration(auto_id=False)
-    fm = StudentRegistration(auto_id=True, label_suffix=" > ", initial = {'name':'jhon'})
-    
+    fm = StudentRegistration()
     return render(req, 'enroll/index.html', {'form':fm})

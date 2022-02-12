@@ -1,0 +1,10 @@
+ORDERING FORM FIELD
+
+    order_fields(field_order)-This method is used to rearrange the fields any time with a list of field names
+    as in field_order. By default Form.field_order=None, which retains the order in which you define the
+    fields in your form class.
+    If field_order is a list of field names, the fields are ordered as specified by the list and remaining fields are
+    appended according to the default order.
+    Unknown field names in the list are ignored.
+    fm = StudentRegistration()
+    fm.order_fields(field_order=['email', 'name' ])

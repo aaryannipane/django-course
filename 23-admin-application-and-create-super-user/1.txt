@@ -1,0 +1,14 @@
+ADMIN APPLICATION
+
+It is a built-in application provided by Django.
+This application provides admin interface for CRUD operations without writing sql statements.
+It reads metadata from your models to provide a quick, model-centric interface where trusted users can
+manage content on your site.
+Admin Application can be accessed using http://127.0.0.1:5000/admin
+Super User is required to login into Admin Application
+
+
+CREATE SUPER USER:- 
+We need super user to login into admin interface of the admin application.
+createsuperuser command is used to create super user.
+Syntax- python manage.py createsuperuser

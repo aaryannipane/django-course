@@ -1,0 +1,33 @@
+How to Register Model Class and use __str__ method 
+
+We are registering our table which we had created using model class, to default
+admin intertace.
+To Register Follow:-
+    Open admin.py file which is inside Application Folder
+    Import your own Model Class created inside Application's models.py
+    admin.site.register(ModelClassName)
+
+    Example:
+    Open admin.py
+        from enroll.models import Student
+        admin.site.register(Student)
+
+
+
+
+__str__() METHOD:- 
+
+    The __str__() method is called whenever you call str() on an object. To display an object in
+    the Django admin site and as the value inserted into a template when it displays an object.
+    Thus, you should always return a nice, human-readable representation of the model from the
+    __str__() method.
+
+    Write this Method in your own model class which is inside models.py file.
+
+    Syntax:
+        def __str__(self):
+            return self.fieldName
+
+    Example:-
+        def __str__(self):
+            return self.stuname

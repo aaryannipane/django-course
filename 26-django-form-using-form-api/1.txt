@@ -1,0 +1,85 @@
+How to Create Django Form using Form API
+
+DJANGO FORM / FORM API 
+
+Django's form functionality can simplify and automate vast portions of work like data
+prepared for display in a form, rendered as HTML, edit using a convenient interface,
+returned to the server, validated and cleaned up etc and can also do it more securely than
+most programmers would be able to do in code they wrote themselves.
+
+Django handles three distinct parts of the work involved in forms:
+
+- preparing and restructuring data to make it ready for rendering
+- creating HTML forms for the data
+- receiving and processing submitted forms and data from the client
+
+
+BOUND AND UNBOUND FORMS
+If it's bound to a set of data, it's capable of validating that data and rendering the form
+as HTML with the data displayed in the HTML.
+
+If it's unbound, it cannot do validation (because there's no data to validate!), but it can
+still render the blank form as HTML.
+
+
+CREATE DJANGO FORM USING FORM CLASS 
+
+    To create Django form we have to create a new file inside application folder lets say file name is forms.py .Now we can write below code inside forms.py to create a form
+
+    Syntax:
+        from django import forms
+        class FormClass Name(forms.Form):
+            label=forms.FieldType()
+            label=forms.FieldType(label="display_label")
+
+    Example:
+        from django import forms
+        class StudentRegistration(forms.Form):
+            name=forms.CharField()      # Here length is not required
+            email-forms.EmailField()
+
+
+FROM ABOVE CODE BELOW CODE WILL BE GENERATED
+
+    <tr>
+        <th> <label for="id_name">Name:</label></th>
+        <td> <input type="text" name="name" required id="id_name"> </td>
+    </tr>
+    <tr>
+        <th> <label for="id_email">Email:</label></th>
+        <td><input type="email" name="email" required id="id_email"></td>
+    </tr>
+
+
+DISPLAY FORM TO USER 
+- Create an object of Form class in views.py then pass object to template files
+- Use Form object in template file
+
+
+CREATING FORM OBJECT IN views.py FILE :-
+    First of all create form object inside views.py file then pass this object to template file as a dict.
+
+    views.py
+    from .forms import StudentRegistration
+    def showformdata(request):
+        fm = StudentRegistration()
+        return render(request, 'enroll/userregistration.html', {'form':fm})
+
+GET OBJECT FROM views.py IN TEMPLATE FILE 
+    inside template folder inside file use key name where you want that form 
+    example:-
+        <form action='GET'>
+            {{form}}
+            <input type="submit" value="submit">
+        </form> 
+
+    NOTE:- Form object won't provide form tag and button you have to write them manually in template file.
+
+
+FORM RENDERING OPTIONS:- 
+
+    - {{ form }} will render them all
+    - {{ form.as_table }} will render them as table cells wrapped in <tr> tags
+    - {{ form.as_p }} will render them wrapped in <p> tags
+    - {{ form.as_ul }} will render them wrapped in <li> tags
+    - {{ form.name_of_field }} will render field manually as given

@@ -41,7 +41,8 @@ REGISTER MODEL BY DECORATOR
 
     Register Model Classes
     @admin.register(ModelClassName)
-    Creating Cass
+    
+    Creating Class
     Class ModelAdminClass Name(admin.ModelAdmin):
         list display=('fieldname1', 'fieldname2',...)
 

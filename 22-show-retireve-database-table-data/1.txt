@@ -13,14 +13,14 @@ Syntax:
 WRITING CODE TO GET DB DATA IN VIEWS.PY 
     first import your own model class from models.py 
     Example:
-    views.py
-    from enroll.models import Student
-    def studentinfo(request):
-        stud = Student.objects.all()
-        return render(request, 'enroll/studetails.html', {'stu':stud})
+    views.py:- 
+        from enroll.models import Student
+        def studentinfo(request):
+            stud = Student.objects.all()
+            return render(request, 'enroll/studetails.html', {'stu':stud})
 
 
-GET DATA FROM VIEWS.PY IN TEMPLATE FILE
+GET ALL DATA FROM VIEWS.PY IN TEMPLATE FILE
 
     templates/enroll/ studetails.html
     <IDOCTYPE html>
@@ -38,3 +38,9 @@ GET DATA FROM VIEWS.PY IN TEMPLATE FILE
             {% endif %}
         </body>
     </html>
+
+
+GET SINGLE DATA USE GET METHOD:- 
+    def studentinfo(request):
+            stud = Student.objects.get(pk=2)  # get(pk=id) pk = primary key
+            return render(request, 'enroll/studetails.html', {'stu':stud})
