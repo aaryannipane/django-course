@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form api</title>
+</head>
+<body>
+    <h1>FORM RENDERING</h1>
+    <form action="">
+        <label for="{{form.name.id_for_label}}">Name:</label>
+        {{form.name}}
+        <!-- <input type="text" name="name" id="id_name" required> -->
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="">
+        {{form.email.label_tag}}
+        {{form.email}}
+        {{form.name.label}}
+        {{form.name.value}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

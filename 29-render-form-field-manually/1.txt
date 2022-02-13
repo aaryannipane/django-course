@@ -1,0 +1,41 @@
+Render Form Fields Manually
+
+FORM RENDERING OPTIONS 
+    {{form}} will render them all
+    {{form.as_table }} will render them as table cells wrapped in <tr> tags
+    {{form.as_p}} will render them wrapped in <p> tags
+    {{form.as_ul }} will render them wrapped in <li> tags
+
+    {{form.name_of_field }} will render field manually as given
+
+
+RENDER FORM FIELD MANUALLY 
+    Each field is available as an attribute of the form using {{form.name_of_field}}
+    {{ field.label }}-The label of the field.
+    Example:-{{ form.name.label }}
+
+    {{field.label_tag }}- The field's label wrapped in the appropriate HTML <label> tag. This includes the form's
+    label _suffix. The default label_suffix is a colon:
+    Example:- {{ form.name.label_tag}
+
+    {{ field.id_for_label }}- The ID that will be used for this field.
+
+
+    {{ field. value }}- The value of the field.
+    Example:-{{ form.name.value }
+
+    {{field.html_name }}- The name of the field that will be used in the input element's name field. This takes the
+    form prefix into account, if it has been set.
+    Example:- {{ form.name.html_name }}
+
+    {{ field.help_text }}- Any help text that has been associated with the field.
+    Example:- {{ form.name.help_text }}
+
+    {{ field.field }}- The Field instance from the form class that this BoundField wraps. You can use it to access Field attributes.
+    Example:- {form.name.field.help_text}
+
+    {{field.is_hidden }}- This attribute is True if the form field is a hidden field and False otherwise. It's not
+    particularly useful as a template variable, but could be useful in conditional tests such as:
+    {% if field.is_hidden %}
+        {# Do something special #}
+    {% endif %}

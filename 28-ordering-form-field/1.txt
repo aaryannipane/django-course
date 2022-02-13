@@ -7,4 +7,4 @@ ORDERING FORM FIELD
     appended according to the default order.
     Unknown field names in the list are ignored.
     fm = StudentRegistration()
-    fm.order_fields(field_order=['email', 'name' ])
+    fm.order_fields(field_order=['email', 'name'])
