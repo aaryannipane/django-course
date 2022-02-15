@@ -1,0 +1,45 @@
+FORM FIELD
+
+    A form's fields are themselves classes; they manage form data and perform validation when a form is
+    submitted.
+
+    Syntax:- FieldType(**kwargs)
+    Example:
+        IntegerField()
+        CharField(required)
+        CharField(required, widget="Textarea")
+
+    from django import forms
+    class StudentRegistration(forms.Form):
+        name = forms.CharField()
+
+
+FIELD ARGUMENTS 
+ 
+required -It take True or False value. By default, each Field class assumes the required value is True.
+
+label - The label argument lets you specify the "human-friendly" label for the field. This is used when
+the Field is displayed in a Form.
+
+label_suftix - The label _suffix argument lets you override the form's label_suftix on a per-field basis.
+
+initial - The initial argument lets you specity the initial value to use when rendering this Field in an
+unbound Form.
+
+disabled - The disabled boolean argument, when set to True, disables a form field using the disabled
+HTML attribute so that it won't be editable by users. Even if a user tampers with the field's value
+submitted to the server, it will be ignored in favor of the value from the form's initial data.
+
+help_text -The help_text argument lets you specity descriptive text for this Field. If you provide
+help_text, it will be displayed next to the Field when the Field is rendered.
+
+error_messages- The error_messages argument lets you override the default messages that the field
+will raise. Pass in a dictionary with keys matching the error messages you want to override.
+Example:- name=forms.CharField(error_messages={'required':"Enter Your Name"'})
+
+validators -The validators argument lets you providea list of validation functions for the field.
+
+localize - The localize argument enables the localization of form data input, as well as the rendered
+output.
+
+widget - The widget argument lets you specify a Widget class to use when rendering the Field.

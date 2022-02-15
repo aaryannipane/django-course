@@ -1,0 +1,19 @@
+CROSS SITE REQUEST FORGERY (CSRF/XSRF)
+
+A Cross-site request forgery hole is when a malicious site can cause a visitor's browser to make a request
+to your server that causes a change on the server. The server thinks that because the request comes with
+the user's cookies, the user wanted to submit that form.
+
+
+Depending on which forms on your site are vulnerable, an attacker might be able to do the following to
+your victims:
+Log the victim out of your site.
+Change the victim's site preferences on your site.
+Post a comment on your site using the victim's login.
+Transfer funds to another user's account.
+
+Attacks can also be based on the victim's IP address ather than cookies:
+Post an anonymous comment that is shown as coming from the victim's IP address.
+Modify settings on a device such as a wireless router or cable modem.
+Modify an intranet wiki page.
+Performa distributed password-guessing attack without a botnet.

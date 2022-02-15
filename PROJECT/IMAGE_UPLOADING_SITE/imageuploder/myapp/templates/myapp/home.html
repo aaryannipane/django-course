@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Hello Image Upload</h1>
+
+    <div class="container">
+        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.photo}}
+            <input type="submit" value="submit"  class="btn">
+        </form>
+    </div>
+
+    <div class="img-container">
+        {% for img in image %}
+        <img src="{{img.photo.url}}" title="{{img.photo.name}}" width="500px" alt="">
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>
