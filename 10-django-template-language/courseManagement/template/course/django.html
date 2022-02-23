@@ -1,3 +1,4 @@
+{% firstof "variable contents" as variable %}
 <html>
 	<head>
 		<title>Course {{cname}}</title>
@@ -79,6 +80,9 @@
 		<span>{{forloop.parentloop.counter}} {{k}} : {{v}}</span><br>
 		{% endfor %}
 		{% endfor %}
+
+		<!-- print created variable variable  -->
+		<p>{{ variable }}</p>
 
 	</body>
 

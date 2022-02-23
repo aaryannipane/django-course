@@ -77,3 +77,9 @@ IF ELIF ELSE TAG:-
         {% else %}
             <h1>length is equal to six</h1>
         {% endif %}
+
+
+CREATE AND VARIABLES 
+{% firstof "variable contents" as variable %}
+
+{% variable %}  use this throughout the code
