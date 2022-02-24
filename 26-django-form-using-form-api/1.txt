@@ -28,7 +28,7 @@ CREATE DJANGO FORM USING FORM CLASS
 
     Syntax:
         from django import forms
-        class FormClass Name(forms.Form):
+        class FormClassName(forms.Form):
             label=forms.FieldType()
             label=forms.FieldType(label="display_label")
 
@@ -36,7 +36,7 @@ CREATE DJANGO FORM USING FORM CLASS
         from django import forms
         class StudentRegistration(forms.Form):
             name=forms.CharField()      # Here length is not required
-            email-forms.EmailField()
+            email=forms.EmailField()
 
 
 FROM ABOVE CODE BELOW CODE WILL BE GENERATED

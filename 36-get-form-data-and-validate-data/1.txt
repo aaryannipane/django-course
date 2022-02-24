@@ -1,0 +1,29 @@
+GET DJANGO FORM DATA 
+    - Validate Data/ Field Validation
+    - Get Cleaned Data
+
+HOW TO SEND 'GET' REQUEST
+    - Open browser and write url hit enter this is by default get request
+    - Anchor Tag
+    - Form tag contains method="GET"
+    - Form tag with specifying method is by default GET
+
+
+HOW TO SEND 'POST' REQUEST:- 
+    - form tag contains method='post'
+
+
+DJANGO FORM AND Field Validation:- 
+    is_valid()- This method is used to run validation and return a Boolean designating whether the data was valid as
+    True or not as False. This returns Irue or False.
+
+    Syntax:- Form.is_valid()
+
+    cleaned_data- This attribute is used to access clean data. Each field in a Form class is responsible not only for
+    validating data, but also for "cleaning" it normalizing it to a consistent format. This is a nice feature, because it allows data for a particular field to be input in a variety of ways, always resulting in consistent output. 
+    Once you've created a Form instance with a set of data and validated it, you can access the clean data via its cleaned_data attribute.
+    Any text based field such as CharField or EmailField always cleans the input into a string.
+    If your data does not validate, the cleaned_data dictionary contains only the valid fields.
+    cleaned_data will always only contain a key for fields defined in the Form, even if you pass extra data when you
+    define the Form.
+    When the Form is valid, cleaned_data will include a key and value for all its fields, even if the data didn't include a value for some optional fields.
